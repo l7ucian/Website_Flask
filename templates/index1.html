@@ -1,0 +1,65 @@
+<!DOCTYPE html >
+<html lang="en"
+      ng-app="bandtracker" >
+<head>
+	{{ JSGlue.include() }}
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/main.css')}}">
+</head >
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container" >
+		<div class="navbar-header" >
+			<a class="navbar-brand"
+			   href="/" >Bands
+			</a >
+		</div >
+	</div >
+</nav >
+<body >
+<div class="container main-content"  ng-controller="BandData">
+    <!--
+   <p>{{locations}}</p> 
+-->
+	<div class="row">
+		<div class="col-md-8">
+			<div class="row" >
+				<div class="col-md-12" >
+                    <form ng-submit="find()" class="form-inline well well-sm">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input type="text"
+                               class="form-control"
+                                name="search_item"
+                                ng-model="search_item"
+                               placeholder="Search band..."/>
+                        <input type="submit" 
+                               id="submit" value="Search"
+                               class="btn btn-success" />
+                    </form>
+				</div >
+			</div >
+
+		</div >
+        
+        		<div class="col-md-8" >
+			<table class="table table-bordered" >
+				<tr ng-repeat="location in locations">
+					<td >{% raw %}{{location.name}}{% endraw %}</td >
+					<td >{% raw %}{{location.place.name}}{% endraw %}</td >
+					<td >{% raw %}{{location.start_time | date:"longDate"}}{% endraw %}</td >
+				</tr >
+
+			</table >
+		</div>
+	</div >
+</div >
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js" ></script >
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script >
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script >
+<script src="{{url_for('.static', filename='js/main.js')}}" ></script >
+</body >
+</html >
