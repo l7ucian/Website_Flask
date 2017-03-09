@@ -35,6 +35,3 @@ def scrapeFacebookEvents(page_id):
     #data = json.loads(request_until_succeed(url))
 
     return request_until_succeed(url)
-
-if __name__ == '__main__':
-    scrapeFacebookEvents(page_id)
