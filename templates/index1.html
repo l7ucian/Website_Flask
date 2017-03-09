@@ -1,13 +1,15 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="en"
       ng-app="bandtracker" >
 <head>
-	{{ JSGlue.include() }}
-<link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
+    <meta charset="UTF-8">
+    <title>Gigs</title>
+    <link rel="stylesheet"
       href="{{url_for('.static', filename='css/main.css')}}">
-</head >
+{{ JSGlue.include() }}
+</head>
+{% extends "bootstrap/base.html" %}
+{% block body %}
 <nav class="navbar navbar-inverse navbar-fixed-top" >
 	<div class="container" >
 		<div class="navbar-header" >
@@ -58,8 +60,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-resource.js" ></script >
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script >
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script >
 <script src="{{url_for('.static', filename='js/main.js')}}" ></script >
 </body >
 </html >
+{% endblock %}
