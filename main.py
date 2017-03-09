@@ -16,13 +16,13 @@ def home():
 def game():
     return render_template('game.html')
 
-@app.route('/gigs')
-def scrape():
-    return f.scrapeFacebookEvents(request.query_string.decode("utf-8"))
-
-@app.route('/gigsearch')
-def gigsearch():
-    return render_template('index1.html')
+# @app.route('/gigs')
+# def scrape():
+#     return f.scrapeFacebookEvents(request.query_string.decode("utf-8"))
+#
+# @app.route('/gigsearch')
+# def gigsearch():
+#     return render_template('index1.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
